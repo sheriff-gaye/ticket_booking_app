@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/home_screen.dart';
+import 'package:my_app/screens/profile_screen.dart';
 import 'package:my_app/screens/search_screen.dart';
+import 'package:my_app/screens/ticket_screen.dart';
 
 class BotttomBar extends StatefulWidget {
   const BotttomBar({super.key});
@@ -14,8 +16,8 @@ class _BotttomBarState extends State<BotttomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const Text("Airplane"),
-    const Text("profile"),
+    const TicketApp(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
