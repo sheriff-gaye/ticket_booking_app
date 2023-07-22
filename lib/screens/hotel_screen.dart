@@ -12,11 +12,11 @@ class HostelScreen extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return Container(
       width: size.width * 0.6,
-      height: AppLayout.getHeight(350),
+      height: AppLayout.getHeight(330),
       padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 15),
       margin: const EdgeInsets.only(right: 17, top: 5),
       decoration: BoxDecoration(
-          color: Styles.primaryColor,
+          color: const Color(0xFF009688),
           boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 20, spreadRadius: 5)],
           borderRadius: BorderRadius.circular(24)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -30,7 +30,7 @@ class HostelScreen extends StatelessWidget {
         const Gap(10),
         Text(
           "${hotel['destination']}",
-          style: Styles.headStyle2.copyWith(color: Styles.kakiColor),
+          style: Styles.headStyle2.copyWith(color: Colors.white),
         ),
         const Gap(5),
         Text(
@@ -40,7 +40,7 @@ class HostelScreen extends StatelessWidget {
         const Gap(10),
         Text(
           "\$${hotel['price']}/night",
-          style: Styles.headStyle1.copyWith(color: Styles.kakiColor),
+          style: Styles.headStyle1.copyWith(color: Colors.white),
         ),
       ]),
     );

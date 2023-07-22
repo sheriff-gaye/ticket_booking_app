@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_app/screens/hotel_screen.dart';
+import 'package:my_app/screens/profile_screen.dart';
 import 'package:my_app/screens/ticket_view.dart';
 import 'package:my_app/utils/app_info.dart';
 import 'package:my_app/utils/app_layout.dart';
@@ -25,40 +26,61 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Good Morning", style: Styles.headStyle3),
+                    Text("Welcome Back", style: Styles.headStyle3),
                     SizedBox(
                       height: AppLayout.getHeight(5),
                     ),
                     Text(
-                      "Book Tickets",
+                      "Sheriff",
                       style: Styles.headStyle1,
                     ),
                   ],
                 ),
-                Container(
-                  decoration: BoxDecoration(
+                GestureDetector(
+                  onTap: () {
+                    // Navigate to the ProfileScreen when tapped
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image:
-                          const DecorationImage(fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
-                  height: AppLayout.getHeight(50),
-                  width: AppLayout.getWidth(50),
+                      image: const DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: AssetImage("assets/images/avatar3.jpg"),
+                      ),
+                    ),
+                    height: AppLayout.getHeight(50),
+                    width: AppLayout.getWidth(50),
+                  ),
                 )
               ]),
               Gap(AppLayout.getHeight(25)),
               Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10), color: Color.fromARGB(15, 45, 63, 131)),
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(15, 45, 63, 131),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(12)),
                 child: Row(
                   children: [
                     const Icon(
                       Icons.search,
-                      color: Color(0xFFBFC205),
+                      color: Colors.blueGrey,
                     ),
-                    Text(
-                      "Search",
-                      style: Styles.headStyle4,
-                    )
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search",
+                          hintStyle: Styles.headStyle4,
+                          border: InputBorder.none,
+                        ),
+                        style: Styles.headStyle4,
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -26,7 +26,7 @@ class TicketApp extends StatelessWidget {
               style: Styles.headStyle1,
             ),
             Gap(AppLayout.getHeight(40)),
-            const TicketsTab(left_text: "Upcoming", right_text: "Previous"),
+            const TicketsTab(left: "Upcoming", right: "Previous"),
             Gap(AppLayout.getHeight(20)),
             Container(
               padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
@@ -47,9 +47,9 @@ class TicketApp extends StatelessWidget {
                     isColor: false,
                   ),
                   Gap(AppLayout.getHeight(20)),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       ColumnLayout(
                         firstText: "Flutter DB",
                         secondText: "Passengers",

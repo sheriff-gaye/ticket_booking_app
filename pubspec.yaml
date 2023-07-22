@@ -36,7 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   gap: ^2.0.0
-  get:
+  get: ^4.6.5
   barcode_widget: ^2.0.3
   barcode_widgets: ^2.0.0
 

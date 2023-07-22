@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_app/screens/bottom_bar.dart';
+import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/utils/app_layout.dart';
 import 'package:my_app/utils/app_styles.dart';
 import 'package:my_app/widgets/column_layout.dart';
@@ -15,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(20), horizontal: AppLayout.getHeight(20)),
         children: [
-          Gap(AppLayout.getHeight(40)),
+          Gap(AppLayout.getHeight(65)),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -24,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
                 width: AppLayout.getWidth(86),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
-                    image: const DecorationImage(image: AssetImage("assets/images/img_1.png"))),
+                    image: const DecorationImage(image: AssetImage("assets/images/avatar3.jpg"))),
               ),
               Gap(AppLayout.getHeight(10)),
               Column(
@@ -32,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Book Tickets",
+                    "Sheriff Gay",
                     style: Styles.headStyle1,
                   ),
                   Gap(AppLayout.getHeight(2)),
@@ -163,9 +165,9 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.grey.shade300,
               ),
               Gap(AppLayout.getHeight(5)),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   ColumnLayout(firstText: "23 042", secondText: "Miles", alignmnet: CrossAxisAlignment.start),
                   ColumnLayout(firstText: "Airline CO", secondText: "Received from", alignmnet: CrossAxisAlignment.end)
                 ],
@@ -176,9 +178,9 @@ class ProfileScreen extends StatelessWidget {
                 isColor: false,
               ),
               Gap(AppLayout.getHeight(12)),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   ColumnLayout(firstText: "24", secondText: "Miles", alignmnet: CrossAxisAlignment.start),
                   ColumnLayout(firstText: "McDonald's", secondText: "Received from", alignmnet: CrossAxisAlignment.end)
                 ],
@@ -189,9 +191,9 @@ class ProfileScreen extends StatelessWidget {
                 isColor: false,
               ),
               Gap(AppLayout.getHeight(12)),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   ColumnLayout(firstText: "52 340", secondText: "Miles", alignmnet: CrossAxisAlignment.start),
                   ColumnLayout(firstText: "Exuma", secondText: "Received from", alignmnet: CrossAxisAlignment.end)
                 ],
@@ -204,7 +206,20 @@ class ProfileScreen extends StatelessWidget {
               "How to get more mile",
               style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w600),
             ),
-          )
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BotttomBar()),
+              );
+              // Your button action here
+            },
+            child: const Text(
+              "HOME",
+              style: TextStyle(color: Color.fromARGB(255, 223, 80, 55), fontSize: 16),
+            ),
+          ),
         ],
       ),
     );

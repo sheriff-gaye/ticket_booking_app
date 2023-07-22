@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/home_screen.dart';
-import 'package:my_app/screens/profile_screen.dart';
+import 'package:my_app/screens/more.dart';
 import 'package:my_app/screens/search_screen.dart';
 import 'package:my_app/screens/ticket_screen.dart';
 
@@ -17,7 +17,7 @@ class _BotttomBarState extends State<BotttomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketApp(),
-    const ProfileScreen(),
+    const MorePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -44,7 +44,7 @@ class _BotttomBarState extends State<BotttomBar> {
             BottomNavigationBarItem(icon: Icon(Icons.search), activeIcon: Icon(Icons.search), label: "Search"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.airplane_ticket_outlined), activeIcon: Icon(Icons.airplane_ticket), label: "Airplane"),
-            BottomNavigationBarItem(icon: Icon(Icons.person_outline), activeIcon: Icon(Icons.person), label: "Person"),
+            BottomNavigationBarItem(icon: Icon(Icons.menu), activeIcon: Icon(Icons.menu), label: "More"),
           ]),
     );
   }

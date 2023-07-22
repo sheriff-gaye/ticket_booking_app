@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 import '../utils/app_layout.dart';
 import '../utils/app_styles.dart';
@@ -12,16 +11,28 @@ class IconText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(12), horizontal: AppLayout.getWidth(12)),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(AppLayout.getWidth(10))),
-      child: Row(children: [
-        Icon(icon, color: const Color(0xffbfc2df)),
-        Gap(AppLayout.getWidth(10)),
-        Text(
-          text,
-          style: Styles.textStyle,
-        ),
-      ]),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(icon, color: const Color(0xffbfc2df)),
+          ),
+          SizedBox(width: AppLayout.getWidth(10)), // You can replace Gap with SizedBox
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: text,
+                hintStyle: Styles.textStyle, // Styles.textStyle should be a valid TextStyle
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
