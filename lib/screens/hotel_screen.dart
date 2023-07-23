@@ -23,7 +23,7 @@ class HostelScreen extends StatelessWidget {
         Container(
           height: AppLayout.getHeight(180),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(10),
               color: Styles.primaryColor,
               image: DecorationImage(fit: BoxFit.cover, image: AssetImage("assets/images/${hotel['image']}"))),
         ),
@@ -35,12 +35,12 @@ class HostelScreen extends StatelessWidget {
         const Gap(5),
         Text(
           "${hotel['place']}",
-          style: Styles.headStyle2.copyWith(color: Colors.white),
+          style: Styles.headStyle3.copyWith(color: Colors.white),
         ),
         const Gap(10),
         Text(
           "\$${hotel['price']}/night",
-          style: Styles.headStyle1.copyWith(color: Colors.white),
+          style: Styles.headStyle2.copyWith(color: Colors.white),
         ),
       ]),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_app/screens/bottom_bar.dart';
-import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/utils/app_layout.dart';
 import 'package:my_app/utils/app_styles.dart';
 import 'package:my_app/widgets/column_layout.dart';
@@ -39,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Gap(AppLayout.getHeight(2)),
                   Text(
-                    "New-York",
+                    "sheriffgaye5@gmail.com",
                     style: Styles.textStyle
                         .copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500),
                   ),
@@ -200,13 +199,14 @@ class ProfileScreen extends StatelessWidget {
               ),
             ]),
           ),
-          Gap(AppLayout.getHeight(40)),
+          Gap(AppLayout.getHeight(20)),
           Center(
             child: Text(
               "How to get more mile",
               style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w600),
             ),
           ),
+          Gap(AppLayout.getHeight(20)),
           TextButton(
             onPressed: () {
               Navigator.push(
@@ -216,8 +216,8 @@ class ProfileScreen extends StatelessWidget {
               // Your button action here
             },
             child: const Text(
-              "HOME",
-              style: TextStyle(color: Color.fromARGB(255, 223, 80, 55), fontSize: 16),
+              "Home",
+              style: TextStyle(color: Color(0xff687daf), fontWeight: FontWeight.w600, fontSize: 17),
             ),
           ),
         ],

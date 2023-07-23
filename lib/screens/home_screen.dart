@@ -15,13 +15,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Styles.bgColor,
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(children: [
-              Gap(AppLayout.getHeight(40)),
+              Gap(AppLayout.getHeight(25)),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )
               ]),
-              Gap(AppLayout.getHeight(25)),
+              Gap(AppLayout.getHeight(20)),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -76,6 +76,7 @@ class HomeScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           hintText: "Search",
                           hintStyle: Styles.headStyle4,
+                          fillColor: const Color.fromARGB(255, 46, 102, 130),
                           border: InputBorder.none,
                         ),
                         style: Styles.headStyle4,
@@ -84,11 +85,11 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Gap(AppLayout.getHeight(40)),
+              Gap(AppLayout.getHeight(35)),
               const TwoHeader(text_one: "Upcoming Flights", text_two: "View all"),
             ]),
           ),
-          Gap(AppLayout.getHeight(15)),
+          Gap(AppLayout.getHeight(13)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
@@ -96,12 +97,12 @@ class HomeScreen extends StatelessWidget {
               children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList(),
             ),
           ),
-          Gap(AppLayout.getHeight(15)),
+          Gap(AppLayout.getHeight(13)),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const TwoHeader(text_one: "Hotels", text_two: "View all"),
           ),
-          Gap(AppLayout.getHeight(15)),
+          Gap(AppLayout.getHeight(10)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),

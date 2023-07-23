@@ -3,6 +3,7 @@ import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/screens/more.dart';
 import 'package:my_app/screens/search_screen.dart';
 import 'package:my_app/screens/ticket_screen.dart';
+import 'package:my_app/utils/app_styles.dart';
 
 class BotttomBar extends StatefulWidget {
   const BotttomBar({super.key});
@@ -29,8 +30,10 @@ class _BotttomBarState extends State<BotttomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       body: Center(child: _widgetOptions[_selectednumber]),
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Styles.bgColor,
           currentIndex: _selectednumber,
           onTap: _onItemTapped,
           elevation: 10,
