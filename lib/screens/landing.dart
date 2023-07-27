@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/bottom_bar.dart';
-import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/screens/login.dart';
-import 'package:my_app/utils/app_styles.dart';
-import '../utils/app_layout.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -31,9 +27,13 @@ class LandingPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 5),
-            const Text(
-              "Fly with confidence. Our Mobile app simplifies airplane ticketing  for a smooth travel experience thank you for being with us . ",
-              style: TextStyle(fontSize: 17, color: Color.fromARGB(255, 128, 125, 125)),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: Text(
+                "Fly with confidence. Our Mobile app simplifies airplane ticketing  for a smooth travel experience thank you for being with us . ",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17, color: Color.fromARGB(255, 128, 125, 125)),
+              ),
             ),
             const SizedBox(height: 65),
             ElevatedButton(

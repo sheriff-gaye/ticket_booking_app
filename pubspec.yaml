@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.5
   barcode_widget: ^2.0.3
   barcode_widgets: ^2.0.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:

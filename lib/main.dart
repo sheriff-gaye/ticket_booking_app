@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/bottom_bar.dart';
 import 'package:my_app/screens/landing.dart';
 import 'package:my_app/utils/app_styles.dart';
 

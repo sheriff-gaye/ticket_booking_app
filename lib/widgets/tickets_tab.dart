@@ -18,13 +18,18 @@ class TicketsTab extends StatelessWidget {
             BoxDecoration(borderRadius: BorderRadius.circular(AppLayout.getHeight(50)), color: const Color(0xfff4f6fd)),
         padding: const EdgeInsets.all(3.5),
         child: Row(children: [
-          Container(
-            width: size.width * 0.44,
-            padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.horizontal(left: Radius.circular(AppLayout.getHeight(50))),
-                color: Colors.white),
-            child: Center(child: Text(left)),
+          GestureDetector(
+            onTap: () {
+              print("hello world");
+            },
+            child: Container(
+              width: size.width * 0.44,
+              padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.horizontal(left: Radius.circular(AppLayout.getHeight(50))),
+                  color: Colors.white),
+              child: Center(child: Text(left)),
+            ),
           ),
           Container(
             width: size.width * 0.44,

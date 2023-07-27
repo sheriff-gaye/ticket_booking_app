@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+// ignore: unused_import
 import 'package:my_app/screens/more.dart';
 import 'package:my_app/utils/app_layout.dart';
 import 'package:my_app/utils/app_styles.dart';
@@ -99,7 +100,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Discount \nfor Survey",
+                                "Discount for Survey",
                                 style: Styles.headStyle2.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                               ),
                               Gap(AppLayout.getHeight(10)),
