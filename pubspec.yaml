@@ -40,7 +40,8 @@ dependencies:
   barcode_widget: ^2.0.3
   barcode_widgets: ^2.0.0
   http: ^1.1.0
-
+  flutter_typeahead: ^4.6.2
+  bottom_picker: ^2.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

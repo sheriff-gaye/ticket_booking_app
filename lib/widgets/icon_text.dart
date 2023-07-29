@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../utils/app_layout.dart';
-import '../utils/app_styles.dart';
 
 class IconText extends StatelessWidget {
   final IconData icon;
-  final String text;
+  // ignore: prefer_typing_uninitialized_variables
+  final text;
   const IconText({super.key, required this.icon, required this.text});
 
   @override
@@ -23,13 +22,7 @@ class IconText extends StatelessWidget {
           ),
           SizedBox(width: AppLayout.getWidth(10)), // You can replace Gap with SizedBox
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: text,
-                hintStyle: Styles.textStyle, // Styles.textStyle should be a valid TextStyle
-              ),
-            ),
+            child: Text(text),
           ),
         ],
       ),

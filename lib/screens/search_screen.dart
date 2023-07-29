@@ -1,7 +1,8 @@
+import 'package:bottom_picker/bottom_picker.dart';
+import 'package:bottom_picker/resources/arrays.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-// ignore: unused_import
-import 'package:my_app/screens/more.dart';
 import 'package:my_app/utils/app_layout.dart';
 import 'package:my_app/utils/app_styles.dart';
 import 'package:my_app/widgets/icon_text.dart';
@@ -15,6 +16,52 @@ class SearchScreen extends StatefulWidget {
   State<SearchScreen> createState() => _SearchScreenState();
 }
 
+String selectedAirport = '';
+
+void _showDatePicker(BuildContext context) {
+  BottomPicker.date(
+    title: "Select a Date",
+    dateOrder: DatePickerDateOrder.dmy,
+    pickerTextStyle: const TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 18),
+    titleStyle: const TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),
+    onChange: (index) {
+      print(index);
+      // selectedAirport = index;
+    },
+    bottomPickerTheme: BottomPickerTheme.plumPlate,
+  ).show(context);
+}
+
+void _showFlightClassPicker(BuildContext context) {
+  List<String> flightClasses = ['Economy Class', 'Business Class', 'First Class'];
+
+  BottomPicker(
+    items: flightClasses.map((className) => Text(className)).toList(),
+    onSubmit: (selectedIndex) {
+      String selectedClass = flightClasses[selectedIndex];
+
+      selectedAirport = selectedClass;
+    },
+    title: 'Select Ticket Class',
+    pickerTextStyle: const TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 18),
+    titleStyle: const TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),
+  ).show(context);
+}
+
+void _airPortPicker(BuildContext context) {
+  BottomPicker(
+    items: const [
+      Text('Abijan (ABJ'),
+      Text('Accra (ACC'),
+      Text('Gambia (GMB)'),
+      Text('FreeTown (FNA'),
+    ],
+    title: 'Select Airport',
+    pickerTextStyle: const TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 18),
+    titleStyle: const TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),
+  ).show(context);
+}
+
 class _SearchScreenState extends State<SearchScreen> {
   bool isSearch = true;
   @override
@@ -25,26 +72,48 @@ class _SearchScreenState extends State<SearchScreen> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(20), vertical: AppLayout.getWidth(20)),
         children: [
-          Gap(AppLayout.getHeight(40)),
+          Gap(AppLayout.getHeight(35)),
           Text(
             "Book a Flight",
-            style: Styles.headStyle1.copyWith(fontSize: AppLayout.getWidth(33)),
+            style: Styles.headStyle1.copyWith(fontSize: AppLayout.getWidth(27)),
+          ),
+          Gap(AppLayout.getHeight(10)),
+          const TicketsTab(left: "One way", right: "Round Trip"),
+          Gap(AppLayout.getHeight(15)),
+          InkWell(
+            onTap: () => _airPortPicker(context),
+            child: const IconText(
+              icon: Icons.flight_takeoff,
+              text: "From",
+            ),
+          ),
+          Gap(AppLayout.getHeight(10)),
+          InkWell(
+            onTap: () => _airPortPicker(context),
+            child: const IconText(
+              icon: Icons.flight_land,
+              text: "To",
+            ),
+          ),
+          Gap(AppLayout.getHeight(10)),
+          InkWell(
+              onTap: () => _showDatePicker(context),
+              child: const IconText(icon: Icons.calendar_month_outlined, text: "Departure Date")),
+          Gap(AppLayout.getHeight(10)),
+          InkWell(
+              onTap: () => _showFlightClassPicker(context),
+              child: const IconText(icon: Icons.class_outlined, text: "Class")),
+          TextFormField(
+            obscureText: true,
+            decoration: const InputDecoration(
+              labelText: 'Promo Code (optional)',
+            ),
           ),
           Gap(AppLayout.getHeight(20)),
-          const TicketsTab(left: "One way", right: "Round Trip"),
-          Gap(AppLayout.getHeight(25)),
-          const IconText(icon: Icons.flight_takeoff, text: "Departure"),
-          Gap(AppLayout.getHeight(10)),
-          const IconText(icon: Icons.flight_land, text: "Arrival"),
-          Gap(AppLayout.getHeight(10)),
-          const IconText(icon: Icons.calendar_month_outlined, text: "Departure Date"),
-          Gap(AppLayout.getHeight(15)),
-          const IconText(icon: Icons.person_rounded, text: "Economy"),
-          Gap(AppLayout.getHeight(15)),
           Container(
             padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(15), horizontal: AppLayout.getWidth(15)),
             decoration: BoxDecoration(
-                color: const Color(0xd91130ce), borderRadius: BorderRadius.circular(AppLayout.getWidth(10))),
+                color: const Color(0xd91130ce), borderRadius: BorderRadius.circular(AppLayout.getWidth(14))),
             child: Center(
               child: Text(
                 "Search Flight",
@@ -52,7 +121,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
           ),
-          Gap(AppLayout.getHeight(40)),
+          Gap(AppLayout.getHeight(20)),
           const TwoHeader(text_one: "Upcoming Flights", text_two: "View all"),
           Gap(AppLayout.getHeight(15)),
           isSearch == true
@@ -79,8 +148,8 @@ class _SearchScreenState extends State<SearchScreen> {
                           ),
                           Gap(AppLayout.getHeight(12)),
                           Text(
-                            "20% discount on early bookings of this flight , do not miss the oppertunity",
-                            style: Styles.headStyle2,
+                            "Hurry! Get a 20% discount for early flight bookings. Don't miss this opportunity! Book now and save on your upcoming travel.",
+                            style: Styles.headStyle3,
                           ),
                         ],
                       ),
@@ -100,7 +169,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Discount for Survey",
+                                "Discount \nfor Survey",
                                 style: Styles.headStyle2.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                               ),
                               Gap(AppLayout.getHeight(10)),

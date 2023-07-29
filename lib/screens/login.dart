@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/api/register.dart';
 import 'package:my_app/screens/bottom_bar.dart';
 import 'package:my_app/screens/register.dart';
 
@@ -144,19 +143,19 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(fontSize: 16),
                 ),
               ),
-              // TextButton(
-              //   onPressed: () {
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => const BotttomBar()),
-              //     );
-              //     // Your button action here
-              //   },
-              //   child: const Text(
-              //     "SKIP",
-              //     style: TextStyle(color: Color.fromARGB(255, 223, 80, 55), fontSize: 16),
-              //   ),
-              // ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BotttomBar()),
+                  );
+                  // Your button action here
+                },
+                child: const Text(
+                  "SKIP",
+                  style: TextStyle(color: Color.fromARGB(255, 223, 80, 55), fontSize: 16),
+                ),
+              ),
             ],
           ),
         ),

@@ -9,7 +9,8 @@ class MorePage extends StatelessWidget {
     return const Scaffold(
       backgroundColor: (Colors.white),
       body: Padding(
-          padding: EdgeInsets.only(top: 60, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 60, left: 20, right: 20),
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Row(
@@ -82,12 +83,13 @@ class MorePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               InkWell(
-                  child: IconTextMore(
-                icon: Icons.settings,
-                text: "Settings",
-                bgColor: Colors.blueGrey,
-                iconColor: Colors.white,
-              )),
+                child: IconTextMore(
+                  icon: Icons.settings,
+                  text: "Settings",
+                  bgColor: Colors.blueGrey,
+                  iconColor: Colors.white,
+                ),
+              ),
               Divider(
                 color: Colors.grey,
               ),
@@ -107,7 +109,9 @@ class MorePage extends StatelessWidget {
                 iconColor: Colors.white,
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
