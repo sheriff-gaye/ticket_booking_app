@@ -15,12 +15,15 @@ class _FlightSettingsPageState extends State<FlightSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 223, 80, 55),
+        title: const Text('Settings'),
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 60, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(child: Text("App Settings")),
             CheckboxListTile(
               title: const Text('Show Direct Flights Only'),
               value: _directFlightsOnly,

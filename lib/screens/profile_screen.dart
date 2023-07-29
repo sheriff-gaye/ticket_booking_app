@@ -7,7 +7,6 @@ import 'package:my_app/widgets/column_layout.dart';
 import 'package:my_app/widgets/layout_builder.dart';
 
 import '../api/logout.dart';
-import '../widgets/icon_text_more.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -60,10 +59,10 @@ class ProfileScreen extends StatelessWidget {
                           child: const Icon(
                             Icons.shield_outlined,
                             color: Colors.white,
-                            size: 15,
+                            size: 14,
                           ),
                         ),
-                        Gap(AppLayout.getHeight(5)),
+                        Gap(AppLayout.getHeight(3)),
                         Text(
                           "premium status",
                           style:
@@ -83,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
                     },
                     child: Text(
                       "Edit",
-                      style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w300),
+                      style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w700),
                     ),
                   )
                 ],
@@ -94,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
           Divider(
             color: Colors.grey.shade300,
           ),
-          Gap(AppLayout.getHeight(8)),
+          Gap(AppLayout.getHeight(10)),
           Stack(
             children: [
               Container(
@@ -137,22 +136,7 @@ class ProfileScreen extends StatelessWidget {
               )
             ],
           ),
-          Gap(AppLayout.getHeight(15)),
-          const Column(children: [
-            IconTextMore(
-              icon: Icons.payment,
-              text: "Payment Methods",
-              bgColor: Color.fromARGB(255, 129, 192, 130),
-              iconColor: Colors.white,
-            ),
-            IconTextMore(
-              icon: Icons.confirmation_num,
-              text: "Settings",
-              bgColor: Color.fromARGB(255, 186, 9, 9),
-              iconColor: Colors.white,
-            ),
-          ]),
-          Gap(AppLayout.getHeight(10)),
+          Gap(AppLayout.getHeight(25)),
           Center(
             child: Text(
               "Accumulated Miles",
@@ -162,12 +146,12 @@ class ProfileScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
             child: Column(children: [
-              Gap(AppLayout.getHeight(10)),
+              Gap(AppLayout.getHeight(20)),
               Text(
                 "912802",
                 style: Styles.textStyle.copyWith(fontWeight: FontWeight.w600, fontSize: 30),
               ),
-              Gap(AppLayout.getHeight(15)),
+              Gap(AppLayout.getHeight(25)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -219,6 +203,19 @@ class ProfileScreen extends StatelessWidget {
                   ColumnLayout(firstText: "Exuma", secondText: "Received from", alignmnet: CrossAxisAlignment.end)
                 ],
               ),
+              Gap(AppLayout.getHeight(12)),
+              const DottedLines(
+                section: 12,
+                isColor: false,
+              ),
+              Gap(AppLayout.getHeight(12)),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ColumnLayout(firstText: "40", secondText: "Miles", alignmnet: CrossAxisAlignment.start),
+                  ColumnLayout(firstText: "Express", secondText: "Received from", alignmnet: CrossAxisAlignment.end)
+                ],
+              ),
             ]),
           ),
           Gap(AppLayout.getHeight(10)),
@@ -228,7 +225,7 @@ class ProfileScreen extends StatelessWidget {
               style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w600),
             ),
           ),
-          Gap(AppLayout.getHeight(20)),
+          Gap(AppLayout.getHeight(40)),
           ElevatedButton(
             onPressed: () {
               logoutUser();

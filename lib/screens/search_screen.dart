@@ -24,7 +24,7 @@ void _showDatePicker(BuildContext context) {
     dateOrder: DatePickerDateOrder.dmy,
     pickerTextStyle: const TextStyle(color: Colors.blue, fontWeight: FontWeight.w300, fontSize: 18),
     titleStyle: const TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),
-    onChange: (index) {
+    onSubmit: (index) {
       print(index);
       // selectedAirport = index;
     },
@@ -103,12 +103,6 @@ class _SearchScreenState extends State<SearchScreen> {
           InkWell(
               onTap: () => _showFlightClassPicker(context),
               child: const IconText(icon: Icons.class_outlined, text: "Class")),
-          TextFormField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: 'Promo Code (optional)',
-            ),
-          ),
           Gap(AppLayout.getHeight(20)),
           Container(
             padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(15), horizontal: AppLayout.getWidth(15)),
