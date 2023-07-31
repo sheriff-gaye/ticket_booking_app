@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/more_screens/about_us.dart';
+import 'package:my_app/screens/more_screens/checkin.dart';
 import 'package:my_app/screens/more_screens/contact_us.dart';
 import 'package:my_app/screens/more_screens/covid_19.dart';
 import 'package:my_app/screens/more_screens/faq.dart';
-import 'package:my_app/screens/login.dart';
+import 'package:my_app/screens/more_screens/payment.dart';
 import 'package:my_app/screens/more_screens/setting.dart';
+import 'package:my_app/screens/more_screens/terms_conditions.dart';
 import 'package:my_app/widgets/icon_text_more.dart';
 
 class MorePage extends StatelessWidget {
@@ -35,20 +37,11 @@ class MorePage extends StatelessWidget {
               ),
               SizedBox(height: 15),
               IconTextMore(
-                  icon: Icons.check_box_outlined,
-                  text: "Check-In",
-                  bgColor: Colors.orange,
-                  iconColor: Colors.white,
-                  route: LoginApp()),
-              Divider(
-                color: Colors.grey,
-              ),
-              IconTextMore(
                   icon: Icons.airplane_ticket_outlined,
-                  text: "Boarding Pass",
+                  text: "Check-in",
                   bgColor: Colors.green,
                   iconColor: Colors.white,
-                  route: LoginApp()),
+                  route: FlightCheckInPage()),
               Divider(
                 color: Colors.grey,
               ),
@@ -57,7 +50,7 @@ class MorePage extends StatelessWidget {
                   text: "Payment Method",
                   bgColor: Colors.blue,
                   iconColor: Colors.white,
-                  route: LoginApp()),
+                  route: PaymentMethodPage()),
               Divider(
                 color: Colors.grey,
               ),
@@ -96,6 +89,15 @@ class MorePage extends StatelessWidget {
                   bgColor: Colors.indigo,
                   iconColor: Colors.white,
                   route: AboutUsPage()),
+              Divider(
+                color: Colors.grey,
+              ),
+              IconTextMore(
+                  icon: Icons.menu_book_outlined,
+                  text: "Tersm & Condition",
+                  bgColor: Colors.orange,
+                  iconColor: Colors.white,
+                  route: TermsAndConditionsPage()),
               Divider(
                 color: Colors.grey,
               ),

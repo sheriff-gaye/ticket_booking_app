@@ -42,6 +42,7 @@ dependencies:
   http: ^1.1.0
   flutter_typeahead: ^4.6.2
   bottom_picker: ^2.0.4
+  url_launcher: ^6.1.12
 dev_dependencies:
   flutter_test:
     sdk: flutter

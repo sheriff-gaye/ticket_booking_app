@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class CovidUpdatesPage extends StatelessWidget {
   const CovidUpdatesPage({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +21,7 @@ class CovidUpdatesPage extends StatelessWidget {
               'COVID-19 Updates for Sunny Travels',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+
             SizedBox(height: 16),
             Text(
               'Sunny Travels is committed to the safety and well-being of our passengers. We are closely monitoring the COVID-19 situation and taking all necessary precautions to ensure safe travel.',

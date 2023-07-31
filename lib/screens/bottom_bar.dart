@@ -3,7 +3,6 @@ import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/screens/more.dart';
 import 'package:my_app/screens/profile_screen.dart';
 import 'package:my_app/screens/search_screen.dart';
-import 'package:my_app/screens/ticket_screen.dart';
 import 'package:my_app/utils/app_styles.dart';
 
 class BotttomBar extends StatefulWidget {
@@ -18,9 +17,8 @@ class _BotttomBarState extends State<BotttomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const TicketApp(),
-    const ProfileScreen(),
     const MorePage(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,12 +45,8 @@ class _BotttomBarState extends State<BotttomBar> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), activeIcon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.search), activeIcon: Icon(Icons.search), label: "Search"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.confirmation_num_outlined),
-                activeIcon: Icon(Icons.confirmation_num),
-                label: "Airplane"),
+            BottomNavigationBarItem(icon: Icon(Icons.menu), activeIcon: Icon(Icons.menu), label: "Search"),
             BottomNavigationBarItem(icon: Icon(Icons.person), activeIcon: Icon(Icons.person), label: "Profile"),
-            BottomNavigationBarItem(icon: Icon(Icons.more_vert), activeIcon: Icon(Icons.more_vert), label: "Search"),
           ]),
     );
   }

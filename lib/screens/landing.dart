@@ -58,7 +58,6 @@ class LandingPage extends StatelessWidget {
                         style: TextStyle(fontSize: 18.0),
                       ),
                       SizedBox(width: 5),
-                      Icon(Icons.arrow_right_alt_outlined)
                     ],
                   ),
                 )),

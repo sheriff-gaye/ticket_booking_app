@@ -5,7 +5,7 @@ class IconText extends StatelessWidget {
   final IconData icon;
   // ignore: prefer_typing_uninitialized_variables
   final text;
-  const IconText({super.key, required this.icon, required this.text});
+  const IconText({super.key, required this.icon, required this.text, required String selectedValue});
 
   @override
   Widget build(BuildContext context) {

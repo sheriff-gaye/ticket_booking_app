@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:my_app/api/register.dart';
-import 'package:my_app/screens/bottom_bar.dart';
 import 'package:my_app/screens/login.dart';
 
 void main() => runApp(const RegisterApp());
@@ -50,10 +49,31 @@ class _RegisterPageState extends State<RegisterPage> {
 
       if (body['success']) {
         // ignore: use_build_context_synchronously
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const BotttomBar()),
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Registration Successfull'),
+              content: const Text('Thank you for your message! We will get back to you soon.'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginApp()),
+                        );
+                      },
+                      child: const Text('OK')),
+                ),
+              ],
+            );
+          },
         );
+        // ignore: use_build_context_synchronously
       } else {
         print("error");
       }

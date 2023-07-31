@@ -1,13 +1,13 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_app/screens/bottom_bar.dart';
 import 'package:my_app/screens/ticket_view.dart';
 import 'package:my_app/utils/app_info.dart';
 import 'package:my_app/utils/app_layout.dart';
 import 'package:my_app/utils/app_styles.dart';
 import 'package:my_app/widgets/column_layout.dart';
 import 'package:my_app/widgets/layout_builder.dart';
-import 'package:my_app/widgets/tickets_tab.dart';
 
 class TicketApp extends StatelessWidget {
   const TicketApp({super.key});
@@ -20,14 +20,14 @@ class TicketApp extends StatelessWidget {
         ListView(
           padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(20), vertical: AppLayout.getWidth(20)),
           children: [
-            Gap(AppLayout.getHeight(40)),
-            Text(
-              "Tickets",
-              style: Styles.headStyle1,
+            Gap(AppLayout.getHeight(33)),
+            Center(
+              child: Text(
+                "Get Your Ticket",
+                style: Styles.headStyle1,
+              ),
             ),
-            Gap(AppLayout.getHeight(40)),
-            const TicketsTab(left: "Upcoming", right: "Previous"),
-            Gap(AppLayout.getHeight(20)),
+            Gap(AppLayout.getHeight(7)),
             Container(
               padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
               child: TicketView(
@@ -153,12 +153,50 @@ class TicketApp extends StatelessWidget {
                 ),
               ),
             ),
-            Gap(AppLayout.getHeight(20)),
+            Gap(AppLayout.getHeight(10)),
             Container(
               padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
               child: TicketView(
-                ticket: ticketList[0],
+                ticket: ticketList[1],
               ),
+            ),
+            Gap(AppLayout.getHeight(10)),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Ticket Booked'),
+                      content: const Text(
+                          'Congratulations! Your ticket with Sunny Travels has been successfully booked. Get ready for an incredible journey filled with unforgettable experiences and beautiful memories.hank you for choosing Sunny Travels for your travel needs. Bon voyage! ✈️🌞 '),
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const BotttomBar()),
+                                );
+                              },
+                              child: const Text('OK')),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                backgroundColor: const Color.fromARGB(255, 4, 139, 47),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40.0),
+                ),
+              ),
+              child: const Text('Download Ticket'),
             ),
           ],
         ),

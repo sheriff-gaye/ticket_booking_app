@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(children: [
-              Gap(AppLayout.getHeight(25)),
+              Gap(AppLayout.getHeight(17)),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
